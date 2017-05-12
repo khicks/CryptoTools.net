@@ -1,0 +1,14 @@
+{
+  "name": "cryptotools/cryptotools",
+  "authors": [
+    {
+      "name": "Kevin Hicks",
+      "email": "kevin@cryptotools.net"
+    }
+  ],
+  "require": {
+    "twig/twig": "~2.0",
+    "phpmailer/phpmailer": "^5.2",
+    "altorouter/altorouter": "^1.2"
+  }
+}
