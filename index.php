@@ -1,3 +1,5 @@
 <?php
 
-echo "Hello!";
+require("vendor/autoload.php");
+require("includes/cryptotools.php");
+
