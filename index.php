@@ -3,5 +3,18 @@
 require("vendor/autoload.php");
 require("includes/cryptotools.php");
 
-echo "This is dev site, ready for production.";
+$router = new AltoRouter();
+$router->setBasePath("");
 
+$router->map('GET', '/', 'CryptoToolsPage::home', 'home');
+
+$router->map('GET', '/api', 'CryptoToolsAPI::test', 'apitest');
+
+$match = $router->match();
+
+if( $match && is_callable( $match['target'] ) ) {
+    call_user_func_array( $match['target'], $match['params'] );
+} else {
+    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    echo "Error 404: Not found";
+}

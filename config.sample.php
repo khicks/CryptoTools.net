@@ -1,6 +1,6 @@
 <?php
 
-$config = array(
+return array(
     'app_name' => "CryptoTools.net",
     'debug' => false,
 

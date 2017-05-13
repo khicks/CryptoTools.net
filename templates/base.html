@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% block head %}
+    <title>{{ title }} - {{ appname }}</title>
+    <meta name="description" content="{{ meta_description }}">
+    <meta property="og:title" content="{{ title }} - {{ appname }}" />
+    <meta property="og:description" content="{{ description }}">
+    <meta property="og:image" content="{{ preview }}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrftoken" content="{{ currentUser.csrftoken }}">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    {% for cssfile in include.css.external %}
+    <link rel="stylesheet" href="{{ cssfile }}">
+    {% endfor %}
+    {% for cssfile in include.css.root %}
+    <link rel="stylesheet" href="{{ cssfile }}">
+    {% endfor %}
+    {% for cssfile in include.css.current %}
+    <link rel="stylesheet" href="{{ cssfile }}">
+    {% endfor %}
+    {% for jsfile in include.js.external %}
+    <script type="text/javascript" src="{{ jsfile }}"></script>
+    {% endfor %}
+    {% for jsfile in include.js.root %}
+    <script type="text/javascript" src="{{ jsfile }}"></script>
+    {% endfor %}
+    {% for jsfile in include.js.current %}
+    <script type="text/javascript" src="{{ jsfile }}"></script>
+    {% endfor %}
+    {% endblock %}
+</head>
+<body>
+<div id="header">
+    {% include "navbar.html" %}
+</div>
+<div id="wrapper">
+    <div class="container">
+        {% if display.title %}
+        <h1 id="page-title">{{ title }}</h1>
+        {% endif %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+{% if display.footer %}
+<footer id="footer">
+    <div class="container">
+        {% block footer %}
+        <hr>
+        <div class="row">
+            <div class="col-xs-12 col-sm-5 col-md-4">
+                &copy; Copyright {{ footer.copyright.year }} {{ footer.copyright.name }}
+            </div>
+            <div class="col-xs-12 col-sm-7 col-md-8">
+                <ul id="footer-menu" class="">
+                    {% for item in footer.menu %}
+                    <li><a href="{{ item.href}}">{{ item.label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        {% endblock %}
+    </div>
+</footer>
+{% endif %}
+</body>
+</html>
