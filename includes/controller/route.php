@@ -50,15 +50,15 @@ class CryptoToolsRoute {
                             array(
                                 'name' => array(
                                     'label' => "Lock icon",
-                                    'href' => "http://www.iconarchive.com/show/colorful-long-shadow-icons-by-graphicloads/Lock-icon.html"
+                                    'href' => "https://commons.wikimedia.org/wiki/File:Padlock-blue.svg"
                                 ),
                                 'authors' => array(
-                                    'label' => "GraphicLoads",
-                                    'href' => "http://graphicloads.com/"
+                                    'label' => "AJ Ashton",
+                                    'href' => "https://commons.wikimedia.org/wiki/User:Eleassar"
                                 ),
                                 'license' => array(
-                                    'label' => "Freeware",
-                                    'href' => "http://www.iconarchive.com/show/colorful-long-shadow-icons-by-graphicloads/Lock-icon.html"
+                                    'label' => "Public domain",
+                                    'href' => "https://commons.wikimedia.org/wiki/File:Padlock-blue.svg"
                                 ),
                                 'description' => array(
                                     'label' => "Favicon"
