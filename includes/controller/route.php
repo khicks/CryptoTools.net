@@ -49,6 +49,23 @@ class CryptoToolsRoute {
                             ),
                             array(
                                 'name' => array(
+                                    'label' => "Font Awesome",
+                                    'href' => "http://fontawesome.io/"
+                                ),
+                                'authors' => array(
+                                    'label' => "Dave Gandy",
+                                    'href' => "https://twitter.com/davegandy"
+                                ),
+                                'license' => array(
+                                    'label' => "MIT",
+                                    'href' => "http://fontawesome.io/"
+                                ),
+                                'description' => array(
+                                    'label' => "Icons"
+                                )
+                            ),
+                            array(
+                                'name' => array(
                                     'label' => "Lock icon",
                                     'href' => "https://commons.wikimedia.org/wiki/File:Padlock-blue.svg"
                                 ),

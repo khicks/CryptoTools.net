@@ -32,6 +32,7 @@ class CryptoToolsPage extends CryptoTools {
                     'external' => array(),
                     'root' => array(
                         "bootstrap.min.css",
+                        "font-awesome.min.css",
                         "cryptotools.css"
                     )
                 ),
