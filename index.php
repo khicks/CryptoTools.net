@@ -6,7 +6,8 @@ require("includes/cryptotools.php");
 $router = new AltoRouter();
 $router->setBasePath("");
 
-$router->map('GET', '/', 'CryptoToolsPage::home', 'home');
+$router->map('GET', '/', 'CryptoToolsRoute::page_home', 'home');
+$router->map('GET', '/attributions', 'CryptoToolsRoute::page_attributions', 'attributions');
 
 $router->map('GET', '/api', 'CryptoToolsAPI::test', 'apitest');
 

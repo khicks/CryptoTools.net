@@ -10,5 +10,7 @@ return array(
     'db_database' => "cryptotools",
 
     'session_time' => 3600,
-    'csrf_required' => true
+    'csrf_required' => true,
+
+    'github_link' => "https://github.com/rotorcowboy/CryptoTools.net"
 );

@@ -75,6 +75,14 @@ class CryptoToolsPage extends CryptoTools {
                         'href' => "{$this->web_root}/about",
                         'label' => "About"
                     ),
+                    'github' => array(
+                        'href' => "{$this->config['github_link']}",
+                        'label' => "GitHub"
+                    ),
+                    'attributions' => array(
+                        'href' => "{$this->web_root}/attributions",
+                        'label' => "Attributions"
+                    ),
                     'contact' => array(
                         'href' => "{$this->web_root}/contact",
                         'label' => "Contact"
@@ -116,25 +124,5 @@ class CryptoToolsPage extends CryptoTools {
 
     private function isAssocArray($arr) {
         return array_keys($arr) !== range(0, count($arr) - 1);
-    }
-
-    public static function home() {
-        $cryptotools = new self();
-        $params = array(
-            'title' => "Home",
-            'include' => array(
-                'js' => array(
-                    'root' => array(
-                        "home.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'home' => array(
-                    'active' => true
-                )
-            )
-        );
-        $cryptotools->displayTemplate("home.html", $params);
     }
 }

@@ -2,6 +2,7 @@
 
 require("includes/controller/api.php");
 require("includes/controller/page.php");
+require("includes/controller/route.php");
 
 class CryptoTools {
     public $php_root;
@@ -36,9 +37,9 @@ class CryptoTools {
     }
 
     private function loadFiles() {
-        require_once('includes/user.php');
-        require_once('includes/session.php');
-        require_once('includes/twofactor.php');
+        require_once('includes/class/user.php');
+        require_once('includes/class/session.php');
+        require_once('includes/class/twofactor.php');
     }
 
     private function loadConfig() {
