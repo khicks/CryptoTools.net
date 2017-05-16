@@ -21,12 +21,184 @@ class CryptoToolsRoute {
         $cryptotools->displayTemplate("home.html", $params);
     }
 
+    public static function page_aes_string() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "AES String Encryption and Decryption",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "aes-string.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "CryptoJS/aes.js",
+                        "aes-string.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'symmetric' => array(
+                    'active' => true,
+                    'items' => array(
+                        'aes' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("aes-string.html", $params);
+    }
+
+    public static function page_hash_string() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "String Hash Calculator",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "hash-string.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "CryptoJS/md5.js",
+                        "CryptoJS/ripemd160.js",
+                        "sha.js",
+                        "hash-string.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'hashing' => array(
+                    'active' => true,
+                    'items' => array(
+                        'hash_string' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("hash-string.html", $params);
+    }
+
+    public static function page_otp() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "One-Time Password Calculator",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "otp.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "sha.js",
+                        "otp.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'hashing' => array(
+                    'active' => true,
+                    'items' => array(
+                        'otp' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("otp.html", $params);
+    }
+
+    public static function page_base64() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "Base64 Converter",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "base64.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "base64.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'other' => array(
+                    'active' => true,
+                    'items' => array(
+                        'base64' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("base64.html", $params);
+    }
+
+    public static function page_about() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "About"
+        );
+        $cryptotools->displayTemplate("about.html", $params);
+    }
+
     public static function page_attributions() {
         $cryptotools = new CryptoToolsPage();
         $params = array(
             'title' => "Attributions",
             'content' => array(
                 'attributions' => array(
+                    'crypto' => array(
+                        'label' => "Cryptographic Utilities",
+                        'items' => array(
+                            array(
+                                'name' => array(
+                                    'label' => "CryptoJS",
+                                    'href' => "https://code.google.com/archive/p/crypto-js/"
+                                ),
+                                'authors' => array(
+                                    'label' => "Jeff Mott",
+                                    'href' => "https://code.google.com/archive/p/crypto-js/wikis/License.wiki"
+                                ),
+                                'license' => array(
+                                    'label' => "New BSD License",
+                                    'href' => "https://code.google.com/archive/p/crypto-js/"
+                                ),
+                                'description' => array(
+                                    'label' => "Encryption and hashing library"
+                                )
+                            ),
+                            array(
+                                'name' => array(
+                                    'label' => "jsSHA",
+                                    'href' => "https://github.com/Caligatio/jsSHA"
+                                ),
+                                'authors' => array(
+                                    'label' => "Brian Turek",
+                                    'href' => "https://github.com/Caligatio"
+                                ),
+                                'license' => array(
+                                    'label' => "New BSD License",
+                                    'href' => "https://github.com/Caligatio/jsSHA/blob/master/LICENSE"
+                                ),
+                                'description' => array(
+                                    'label' => "Enhanced SHA library"
+                                )
+                            )
+                        )
+                    ),
                     'design' => array(
                         'label' => "Design",
                         'items' => array(

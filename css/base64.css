@@ -1,0 +1,11 @@
+textarea {
+    margin: 10px 0;
+}
+
+#base64 {
+    font-family: monospace;
+}
+
+#image {
+    display: none;
+}

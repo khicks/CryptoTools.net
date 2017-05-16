@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>This tool produces various cryptographic hashes of a string input.</p>
+
+<textarea id="input" class="form-control" rows="5" placeholder="Input text"></textarea>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="100px">Algorithm</th>
+        <th>Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>MD5</td>
+        <td><input type="text" id="output-md5" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-1</td>
+        <td><input type="text" id="output-sha1" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-224</td>
+        <td><input type="text" id="output-sha224" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-256</td>
+        <td><input type="text" id="output-sha256" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-384</td>
+        <td><input type="text" id="output-sha384" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-512</td>
+        <td><input type="text" id="output-sha512" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-224</td>
+        <td><input type="text" id="output-sha3224" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-256</td>
+        <td><input type="text" id="output-sha3256" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-384</td>
+        <td><input type="text" id="output-sha3384" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-512</td>
+        <td><input type="text" id="output-sha3512" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>RIPEMD-160</td>
+        <td><input type="text" id="output-ripemd160" class="form-control" readonly></td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

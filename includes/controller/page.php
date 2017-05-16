@@ -39,7 +39,8 @@ class CryptoToolsPage extends CryptoTools {
                 'js' => array(
                     'external' => array(),
                     'root' => array(
-                        "jquery.min.js"
+                        "jquery.min.js",
+                        "bootstrap.min.js"
                     )
                 )
             ),
@@ -60,6 +61,65 @@ class CryptoToolsPage extends CryptoTools {
                     'icon' => "fa-home",
                     'label' => "Home",
                     'active' => false
+                ),
+                'symmetric' => array(
+                    'type' => "dropdown",
+                    'icon' => "fa-exchange",
+                    'label' => "Symmetric",
+                    'active' => false,
+                    'items' => array(
+                        'aes_string' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/aes",
+                            'icon' => "fa-key",
+                            'label' => "AES String Encryption and Decryption",
+                            'active' => false
+                        )
+                    )
+                ),
+                'asymmetric' => array(
+                    'type' => "dropdown",
+                    'icon' => "fa-refresh",
+                    'label' => "Asymmetric",
+                    'active' => false,
+                    'items' => array()
+                ),
+                'hashing' => array(
+                    'type' => "dropdown",
+                    'icon' => "fa-random",
+                    'label' => "Hashing",
+                    'active' => false,
+                    'items' => array(
+                        'hash_string' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/hash",
+                            'icon' => "fa-calculator",
+                            'label' => "String Hash Calculator",
+                            'active' => false
+                        ),
+                        'otp' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/otp",
+                            'icon' => "fa-clock-o",
+                            'label' => "One-Time Password Calculator",
+                            'active' => false
+                        )
+                    )
+                ),
+                'other' => array(
+                    'type' => "dropdown",
+                    'icon' => "fa-question",
+                    'label' => "Other",
+                    'active' => false,
+                    'items' => array(
+                        'base64' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/base64",
+                            'icon' => "fa-retweet",
+                            'label' => "Base64 Converter",
+                            'active' => false
+                        )
+                    )
                 )
             ),
             'footer' => array(

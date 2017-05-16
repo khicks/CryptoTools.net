@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-xs-12 col-sm-6">
+        <h3>Basic</h3>
+        <div class="row">
+            <div class="col-xs-12 col-lg-8">
+                <div class="form-group">
+                    <label for="secret">Secret</label>
+                    <input type="text" id="secret" class="form-control" name="secret">
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-4">
+                <button type="button" id="generateButton" class="btn btn-primary btn-block form-control"><i class="fa fa-key"></i> Generate secret</button>
+            </div>
+        </div>
+        <h4>One-Time Password (Update in: <span id='updatingIn'></span>)</h4>
+        <div class="row">
+            <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                <div class="form-group">
+                    <label for="otpCurrent">Current</label>
+                    <input type="text" id="otpCurrent" class="form-control input-lg otp" readonly>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
+                <div class="form-group">
+                    <label for="otpNext">Next</label>
+                    <input type="text" id="otpNext" class="form-control input-lg otp" readonly>
+                </div>
+            </div>
+        </div>
+
+        <h4>QR Code</h4>
+        <div class="checkbox">
+            <label><input type="checkbox" id="generateQRCode">Display a QR code by sending the secret to Google</label>
+        </div>
+        <div id="displayQRWrapper">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-lg-8">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="name">Account name</label>
+                                <input type="text" id="name" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="form-group">
+                                <label for="issuer">Issuer</label>
+                                <input type="text" id="issuer" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="QRWrapper">
+                        <img id="QRCode" src="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+        <h3>Advanced</h3>
+        <div class="form-group">
+            <label for="secretHex">Secret hex (<span id='secretHexLength'></span>)</label>
+            <input type="text" id="secretHex" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label for="epoch">Epoch time</label>
+            <input type="text" id="epoch" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label for="epochIteration">Epoch iteration</label>
+            <input type="text" id="epochIteration" class="form-control" readonly>
+        </div>
+        <div class="form-group">
+            <label for="hmac">HMAC</label>
+            <input type="text" id="hmac" class="form-control" readonly>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
