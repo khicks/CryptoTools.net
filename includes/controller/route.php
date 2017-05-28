@@ -52,6 +52,37 @@ class CryptoToolsRoute {
         $cryptotools->displayTemplate("aes-string.html", $params);
     }
 
+    public static function page_rsa_gen() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "RSA Key Generator",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "rsa-gen.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "JSEncrypt/jsencrypt.min.js",
+                        "rsa-gen.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'asymmetric' => array(
+                    'active' => true,
+                    'items' => array(
+                        'rsagen' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("rsa-gen.html", $params);
+    }
+
     public static function page_hash_string() {
         $cryptotools = new CryptoToolsPage();
         $params = array(
@@ -195,6 +226,23 @@ class CryptoToolsRoute {
                                 ),
                                 'description' => array(
                                     'label' => "Enhanced SHA library"
+                                )
+                            ),
+                            array(
+                                'name' => array(
+                                    'label' => "JSEncrypt",
+                                    'href' => "https://github.com/travist/jsencrypt"
+                                ),
+                                'authors' => array(
+                                    'label' => "Travis Tidwell",
+                                    'href' => "https://github.com/travist"
+                                ),
+                                'license' => array(
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/travist/jsencrypt/blob/master/LICENSE.txt"
+                                ),
+                                'description' => array(
+                                    'label' => "RSA library"
                                 )
                             )
                         )

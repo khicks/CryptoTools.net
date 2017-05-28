@@ -1,0 +1,35 @@
+#gen-progress-bar {
+    width: 100%;
+}
+
+#gen-success,
+#finish-success {
+    color: #009900;
+}
+
+#gen-error,
+#finish-error {
+    color: #990000;
+}
+
+.done-text {
+    display: none;
+    font-weight: bold;
+}
+
+.form-inline {
+    margin-bottom: 20px;
+}
+
+#key-length {
+    width: auto;
+    margin-right: 10px;
+}
+
+.key-box {
+    width: 100%;
+    border: 1px solid #999999;
+    font-family: monospace;
+    font-size: 9pt;
+    white-space: pre;
+}

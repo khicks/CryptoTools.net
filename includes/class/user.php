@@ -33,7 +33,7 @@ class CryptoToolsCurrentUser extends CryptoToolsUser {
         $this->csrf_token = $_SESSION['csrf_token'];
 
         if (!empty($this->user_id)) {
-            $this->session = new CurrentSession($this->cryptotools, $this->user_id);
+            $this->session = new CryptoToolsCurrentSession($this->cryptotools, $this->user_id);
             if (!$this->session->check()) {
                 $this->user_id = null;
                 $this->username = null;

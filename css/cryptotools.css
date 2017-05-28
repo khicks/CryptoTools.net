@@ -1,6 +1,6 @@
-#wrapper {
-    margin-top: 50px;
-}
+/*#wrapper {*/
+    /*margin-top: 50px;*/
+/*}*/
 
 /* navbar dropdown expand on hover */
 @media (min-width: 768px) {
@@ -45,3 +45,6 @@ footer {
     }
 }
 
+.navbar-right {
+    margin-right: 0;
+}

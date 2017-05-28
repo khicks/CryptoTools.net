@@ -40,7 +40,8 @@ class CryptoToolsPage extends CryptoTools {
                     'external' => array(),
                     'root' => array(
                         "jquery.min.js",
-                        "bootstrap.min.js"
+                        "bootstrap.min.js",
+                        "cryptotools.js"
                     )
                 )
             ),
@@ -82,7 +83,15 @@ class CryptoToolsPage extends CryptoTools {
                     'icon' => "fa-refresh",
                     'label' => "Asymmetric",
                     'active' => false,
-                    'items' => array()
+                    'items' => array(
+                        'rsagen' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/rsagen",
+                            'icon' => "fa-certificate",
+                            'label' => "RSA Key Generator",
+                            'active' => false
+                        )
+                    )
                 ),
                 'hashing' => array(
                     'type' => "dropdown",
