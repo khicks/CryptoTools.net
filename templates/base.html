@@ -1,37 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-    {% block head %}
-    <title>{{ title }} - {{ appname }}</title>
-    <meta name="description" content="{{ meta_description }}">
-    <meta property="og:title" content="{{ title }} - {{ appname }}" />
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:image" content="{{ preview }}" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrftoken" content="{{ currentUser.csrftoken }}">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-    {% for cssfile in include.css.external %}
-    <link rel="stylesheet" href="{{ cssfile }}">
-    {% endfor %}
-    {% for cssfile in include.css.root %}
-    <link rel="stylesheet" href="{{ cssfile }}">
-    {% endfor %}
-    {% for cssfile in include.css.current %}
-    <link rel="stylesheet" href="{{ cssfile }}">
-    {% endfor %}
-    {% for jsfile in include.js.external %}
-    <script type="text/javascript" src="{{ jsfile }}"></script>
-    {% endfor %}
-    {% for jsfile in include.js.root %}
-    <script type="text/javascript" src="{{ jsfile }}"></script>
-    {% endfor %}
-    {% for jsfile in include.js.current %}
-    <script type="text/javascript" src="{{ jsfile }}"></script>
-    {% endfor %}
-    {% endblock %}
-</head>
+{% include "head.html" %}
 <body>
 <div id="header">
     {% include "navbar.html" %}

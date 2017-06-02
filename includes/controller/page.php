@@ -27,6 +27,7 @@ class CryptoToolsPage extends CryptoTools {
         $init_params = array(
             'appname' => $this->config['app_name'],
             'webroot' => $this->web_root,
+            'google_analytics_tracking_id' => $this->config['google_analytics_tracking_id'],
             'include' => array(
                 'css' => array(
                     'external' => array(),
