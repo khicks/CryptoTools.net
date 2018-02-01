@@ -12,6 +12,7 @@ $router->map('GET', '/rsagen', 'CryptoToolsRoute::page_rsa_gen', 'rsa_gen');
 $router->map('GET', '/hash', 'CryptoToolsRoute::page_hash_string', 'hash_string');
 $router->map('GET', '/otp', 'CryptoToolsRoute::page_otp', 'otp');
 $router->map('GET', '/base64', 'CryptoToolsRoute::page_base64', 'base64');
+$router->map('GET', '/bitcoin', 'CryptoToolsRoute::page_bitcoin', 'bitcoin');
 
 $router->map('GET', '/about', 'CryptoToolsRoute::page_about', 'about');
 $router->map('GET', '/attributions', 'CryptoToolsRoute::page_attributions', 'attributions');

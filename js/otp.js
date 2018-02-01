@@ -36,7 +36,6 @@ $(function() {
     function updateOtp() {
         var secretInput = $("#secret");
         var generateQRCode = $("#generateQRCode");
-        var displayQRWrapper = $("#displayQRWrapper");
         var qrWrapper = $("#QRWrapper");
         var qrCode = $("#QRCode");
         var accountNameInput = $("#name");
@@ -52,13 +51,6 @@ $(function() {
         var otpCurrent = calculateOTP(secretInput.val(), epoch);
         var otpNext = calculateOTP(secretInput.val(), epoch+30);
 
-        if (generateQRCode.is(':checked')) {
-            displayQRWrapper.slideDown();
-        }
-        else {
-            displayQRWrapper.slideUp();
-        }
-
         epochIterationOutput.val(otpCurrent.epochIteration);
 
         if (otpCurrent.success) {
@@ -70,8 +62,10 @@ $(function() {
             otpCurrentOutput.val(otpCurrent.otp);
             otpNextOutput.val(otpNext.otp);
 
-            if (generateQRCode.is(':checked') && accountNameInput.val().length > 0) {
-                qrCode.attr('src', "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/"+accountNameInput.val().replace(/\s/g,'%2520')+"%3Fsecret%3D"+secretInput.val().replace(/\s+/g,'')+"%26issuer%3D"+issuerInput.val().replace(/\s/g,'%2520')+"%26period%3D30");
+            if (accountNameInput.val().length > 0) {
+                $("#QRWrapper").html("");
+                new QRCode(document.getElementById("QRWrapper"), "otpauth://totp/"+accountNameInput.val()+"?secret="+secretInput.val().replace(/\s+/g,'')+"&issuer="+issuerInput.val()+"&period=30");
+                //qrCode.attr('src', "https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=200x200&chld=M|0&cht=qr&chl=otpauth://totp/"+accountNameInput.val().replace(/\s/g,'%2520')+"%3Fsecret%3D"+secretInput.val().replace(/\s+/g,'')+"%26issuer%3D"+issuerInput.val().replace(/\s/g,'%2520')+"%26period%3D30");
                 qrWrapper.slideDown();
             }
             else {

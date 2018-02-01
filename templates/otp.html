@@ -2,6 +2,8 @@
 
 {% block content %}
 
+<p>This tool produces the current time-based one-time password with a given or generated secret. You may also create a QR code with your chosen label.</p>
+
 <div class="row">
     <div class="col-xs-12 col-sm-6">
         <h3>Basic</h3>
@@ -33,29 +35,24 @@
         </div>
 
         <h4>QR Code</h4>
-        <div class="checkbox">
-            <label><input type="checkbox" id="generateQRCode">Display a QR code by sending the secret to Google</label>
-        </div>
-        <div id="displayQRWrapper">
-            <div class="row">
-                <div class="col-xs-12 col-md-10 col-lg-8">
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="form-group">
-                                <label for="name">Account name</label>
-                                <input type="text" id="name" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 col-sm-6">
-                            <div class="form-group">
-                                <label for="issuer">Issuer</label>
-                                <input type="text" id="issuer" class="form-control">
-                            </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-10 col-lg-8">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="name">Account name</label>
+                            <input type="text" id="name" class="form-control">
                         </div>
                     </div>
-                    <div id="QRWrapper">
-                        <img id="QRCode" src="" />
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-group">
+                            <label for="issuer">Issuer</label>
+                            <input type="text" id="issuer" class="form-control">
+                        </div>
                     </div>
+                </div>
+                <div id="QRWrapper">
+                    <img id="QRCode" src="" />
                 </div>
             </div>
         </div>

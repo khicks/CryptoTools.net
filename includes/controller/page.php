@@ -128,6 +128,13 @@ class CryptoToolsPage extends CryptoTools {
                             'icon' => "fa-retweet",
                             'label' => "Base64 Converter",
                             'active' => false
+                        ),
+                        'bitcoin-tools' => array(
+                            'type' => "link",
+                            'href' => "{$this->web_root}/bitcoin",
+                            'icon' => "fa-bitcoin",
+                            'label' => "Bitcoin Toolkit",
+                            'active' => false
                         )
                     )
                 )

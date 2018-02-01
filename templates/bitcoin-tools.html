@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3>Address Generator</h3>
+
+<div class="form-inline">
+    <div class="form-group">
+        <label for="num-addresses">Number of addresses</label>
+        <input type="number" id="num-addresses" class="form-control" value="1" min="1" max="100">
+    </div>
+    <div class="form-group">
+        <button id="generate-button" class="btn btn-primary">Generate addresses</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Private keys
+            </div>
+            <div class="panel-body">
+                <textarea id="private-keys" class="form-control key-box" rows="1" title="private-keys"></textarea>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Addresses
+            </div>
+            <div class="panel-body">
+                <textarea id="addresses" class="form-control key-box" rows="1" title="addresses" readonly="readonly"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

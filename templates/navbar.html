@@ -21,7 +21,7 @@
                     <ul class="dropdown-menu">
                         {% for item in item.items %}
                         {% if item.type == "link" %}
-                        <li{% if item.active %} class="active"{% endif %}><a href="{{item.href}}"><i class="fa {{ item.icon }}"></i> {{item.label}}</a></li>
+                        <li{% if item.active %} class="active"{% endif %}><a href="{{item.href}}"><i class="fa fa-fw {{ item.icon }}"></i> {{item.label}}</a></li>
                         {% elseif item.type == "separator" %}
                         <li role="separator" class="divider"></li>
                         {% endif %}

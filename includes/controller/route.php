@@ -128,6 +128,7 @@ class CryptoToolsRoute {
                 ),
                 'js' => array(
                     'root' => array(
+                        "qrcode.min.js",
                         "sha.js",
                         "otp.js"
                     )
@@ -177,6 +178,37 @@ class CryptoToolsRoute {
         $cryptotools->displayTemplate("base64.html", $params);
     }
 
+    public static function page_bitcoin() {
+        $cryptotools = new CryptoToolsPage();
+        $params = array(
+            'title' => "Bitcoin Toolkit",
+            'include' => array(
+                'css' => array(
+                    'root' => array(
+                        "bitcoin-tools.css"
+                    )
+                ),
+                'js' => array(
+                    'root' => array(
+                        "bitcoinjs.min.js",
+                        "bitcoin-tools.js"
+                    )
+                )
+            ),
+            'navigation' => array(
+                'other' => array(
+                    'active' => true,
+                    'items' => array(
+                        'bitcoin-tools' => array(
+                            'active' => true
+                        )
+                    )
+                )
+            )
+        );
+        $cryptotools->displayTemplate("bitcoin-tools.html", $params);
+    }
+
     public static function page_about() {
         $cryptotools = new CryptoToolsPage();
         $params = array(
@@ -196,6 +228,23 @@ class CryptoToolsRoute {
                         'items' => array(
                             array(
                                 'name' => array(
+                                    'label' => "BitcoinJS",
+                                    'href' => "https://bitcoinjs.org"
+                                ),
+                                'authors' => array(
+                                    'label' => "bitcoinjs-lib contributors",
+                                    'href' => "https://github.com/bitcoinjs/bitcoinjs-lib/graphs/contributors"
+                                ),
+                                'license' => array(
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/LICENSE"
+                                ),
+                                'description' => array(
+                                    'label' => "Bitcoin library"
+                                )
+                            ),
+                            array(
+                                'name' => array(
                                     'label' => "CryptoJS",
                                     'href' => "https://code.google.com/archive/p/crypto-js/"
                                 ),
@@ -209,6 +258,23 @@ class CryptoToolsRoute {
                                 ),
                                 'description' => array(
                                     'label' => "Encryption and hashing library"
+                                )
+                            ),
+                            array(
+                                'name' => array(
+                                    'label' => "JSEncrypt",
+                                    'href' => "https://github.com/travist/jsencrypt"
+                                ),
+                                'authors' => array(
+                                    'label' => "Travis Tidwell",
+                                    'href' => "https://github.com/travist"
+                                ),
+                                'license' => array(
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/travist/jsencrypt/blob/master/LICENSE.txt"
+                                ),
+                                'description' => array(
+                                    'label' => "RSA library"
                                 )
                             ),
                             array(
@@ -227,22 +293,27 @@ class CryptoToolsRoute {
                                 'description' => array(
                                     'label' => "Enhanced SHA library"
                                 )
-                            ),
+                            )
+                        )
+                    ),
+                    'other_js' => array(
+                        'label' => "Other JavaScript Libraries",
+                        'items' => array(
                             array(
                                 'name' => array(
-                                    'label' => "JSEncrypt",
-                                    'href' => "https://github.com/travist/jsencrypt"
+                                    'label' => "qrcode.js",
+                                    'href' => "https://davidshimjs.github.io/qrcodejs"
                                 ),
                                 'authors' => array(
-                                    'label' => "Travis Tidwell",
-                                    'href' => "https://github.com/travist"
+                                    'label' => "Sangmin, Shim",
+                                    'href' => "https://github.com/davidshimjs"
                                 ),
                                 'license' => array(
                                     'label' => "MIT",
-                                    'href' => "https://github.com/travist/jsencrypt/blob/master/LICENSE.txt"
+                                    'href' => "https://github.com/davidshimjs/qrcodejs/blob/master/LICENSE",
                                 ),
                                 'description' => array(
-                                    'label' => "RSA library"
+                                    'label' => "QR code generator"
                                 )
                             )
                         )
