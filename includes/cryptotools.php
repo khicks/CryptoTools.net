@@ -22,8 +22,6 @@ class CryptoTools {
         $this->loadDirectories();
         $this->loadFiles();
         $this->loadConfig();
-        $this->loadDB();
-        $this->loadMailer();
         $this->startSession();
     }
 
@@ -49,28 +47,6 @@ class CryptoTools {
         else {
             die("No config.");
         }
-    }
-
-    private function loadDB() {
-        $dsn = "mysql:dbname={$this->config['db_database']};host={$this->config['db_hostname']}";
-        $user = $this->config['db_username'];
-        $password = $this->config['db_password'];
-
-        try {
-            $this->db = new PDO($dsn, $user, $password);
-        } catch (PDOException $e) {
-            if ($this->config['debug']) {
-                die("Connection to database failed: ".$e->getMessage());
-            }
-            else {
-                die("Connection to database failed.");
-            }
-        }
-    }
-
-    private function loadMailer() {
-        $this->mailer = new PHPMailer();
-        //TODO: Add settings.
     }
 
     private function startSession() {
