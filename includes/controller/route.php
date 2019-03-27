@@ -33,7 +33,8 @@ class CryptoToolsRoute {
                 ),
                 'js' => array(
                     'root' => array(
-                        "CryptoJS/aes.js",
+                        //"CryptoJS/aes.js",
+			"CryptoJS/crypto-js.js",
                         "aes-string.js"
                     )
                 )
