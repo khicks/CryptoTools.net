@@ -59,5 +59,8 @@ $(function() {
         container: 'body',
         placement: 'top',
         title: "This shared secret is private between you and your partner."
-    })
+    });
+
+    generateMyKey();
+    updateKeys();
 });
