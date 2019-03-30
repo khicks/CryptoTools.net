@@ -14,7 +14,7 @@
                 <li class="nav-item {% if item.active %} active{% endif %}"><a class="nav-link" href="{{ item.href }}"><i class="fa {{ item.icon }}"></i> {{item.label}}</a></li>
                 {% elseif item.type == "dropdown" %}
                 <li class="nav-item dropdown{% if item.active %} active{% endif %}">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa {{ item.icon }}"></i> {{item.label}} <span class="caret"></span></a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#"><i class="fa {{ item.icon }}"></i> {{item.label}} <span class="caret"></span></a>
                     <div class="dropdown-menu">
                         {% for item in item.items %}
                         {% if item.type == "link" %}
