@@ -92,7 +92,14 @@ class CryptoToolsPage extends CryptoTools {
                             'icon' => "fa-certificate",
                             'label' => "RSA Key Generator",
                             'active' => false
-                        )
+                        ),
+                        'dhe' => [
+                            'type' => "link",
+                            'href' => "{$this->web_root}/dhe",
+                            'icon' => "fa-exchange",
+                            'label' => "Diffie-Hellman Key Exchange",
+                            'active' => false
+                        ]
                     )
                 ),
                 'hashing' => array(

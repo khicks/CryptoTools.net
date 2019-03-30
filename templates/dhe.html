@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <p><a href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange" target="_blank">Diffie-Hellman key exchange</a> allows two parties to generate a shared secret over an insecure channel.</p>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-12 col-lg-6">
+        <h3>You</h3>
+        <div class="form-group">
+            <label for="my-private" class="h5">Private key</label>
+            <div class="form-row">
+                <div class="col-12 col-lg-8 col-xl-9 mb-1">
+                    <input id="my-private" type="text" class="form-control text-monospace border-danger">
+                </div>
+                <div class="col-12 col-lg-4 col-xl-3">
+                    <button id="generate-button" type="button" class="btn btn-primary btn-block"><i class="fa fa-key"></i> Generate</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="my-public" class="h5">Public key</label>
+            <div class="form-row">
+                <div class="col-12">
+                    <input id="my-public" type="text" class="form-control text-monospace border-success" readonly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6">
+        <h3>Partner</h3>
+        <div class="form-group">
+            <label for="partner-private" class="h5">Private key</label>
+            <div class="form-row">
+                <div class="col-12 mb-1">
+                    <input id="partner-private" type="text" class="form-control text-monospace" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="partner-public" class="h5">Public key</label>
+            <div class="form-row">
+                <div class="col-12">
+                    <input id="partner-public" type="text" class="form-control text-monospace border-success">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <h3>Shared secret</h3>
+        <input id="shared-key" type="text" class="form-control text-monospace text-center border-danger" readonly>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-12">
+        <h3>Description</h3>
+        <p>This tool will generate a key pair for you, of which you can send the public key to a partner. Once your partner sends you their public key, paste it into their public key box. If done successfully, you two should have an identical shared secret. You may use the shared secret to encrypt messages to each other, possibly by using the <a href="/aes">AES String Encryption and Decryption</a> tool.</p>
+    </div>
+</div>
+
+{% endblock %}

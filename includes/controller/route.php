@@ -84,6 +84,37 @@ class CryptoToolsRoute {
         $cryptotools->displayTemplate("rsa-gen.html", $params);
     }
 
+    public static function page_dhe() {
+        $cryptotools = new CryptoToolsPage();
+        $params = [
+            'title' => "Diffie-Hellman Key Exchange",
+            'include' => [
+                'css' => [
+                    'root' => [
+                        "dhe.css"
+                    ]
+                ],
+                'js' => [
+                    'root' => [
+                        "elliptic.min.js",
+                        "dhe.js"
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'asymmetric' => [
+                    'active' => true,
+                    'items' => [
+                        'dhe' => [
+                            'active' => true
+                        ]
+                    ]
+                ]
+            ]
+        ];
+        $cryptotools->displayTemplate("dhe.html", $params);
+    }
+
     public static function page_hash_string() {
         $cryptotools = new CryptoToolsPage();
         $params = array(
