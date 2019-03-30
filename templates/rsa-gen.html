@@ -4,39 +4,40 @@
 
 <p>You may generate an RSA private key with the help of this tool. Additionally, it will display the public key of a generated or pasted private key. This tool works entirely on the <b>client</b> side. No information is transmitted to the server.</b></p>
 
-<div class="form-inline">
-    <div class="form-group">
+<div class="row mb-3">
+    <div class="col-12">
         <label for="key-length">Key Length</label>
-        <select class="form-control" id="key-length">
-            <option value="1024">1024</option>
-            <option value="2048">2048</option>
-            <option value="4096">4096</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <button id="generate-button" class="btn btn-primary">Generate key pair</button>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-xs-12 col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Private key
+        <div class="form-row">
+            <div class="col-6 col-md-3 col-lg-2">
+                <select class="form-control w-100" id="key-length">
+                    <option value="1024">1024</option>
+                    <option value="2048">2048</option>
+                    <option value="4096">4096</option>
+                </select>
             </div>
-            <div class="panel-body">
-                <textarea id="private-key" class="form-control key-box" rows="20" title="private-key"></textarea>
+            <div class="col-6 col-md-3 col-xl-2">
+                <button id="generate-button" class="btn btn-success btn-block">Generate key pair</button>
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-md-6">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                Public key
-            </div>
-            <div class="panel-body">
-                <textarea id="public-key" class="form-control key-box" rows="20" title="public-key" readonly="readonly"></textarea>
-            </div>
+</div>
+
+<div class="card-group w-100">
+    <div class="card">
+        <div class="card-header">
+            <label for="private-key" class="mb-0">Private key</label>
+        </div>
+        <div class="card-body">
+            <textarea id="private-key" class="form-control text-monospace key-box" rows="20" title="private-key"></textarea>
+        </div>
+    </div>
+    <div class="w-100 d-block d-lg-none"></div>
+    <div class="card">
+        <div class="card-header">
+            <label for="public-key" class="mb-0">Public key</label>
+        </div>
+        <div class="card-body">
+            <textarea id="public-key" class="form-control text-monospace key-box" rows="20" title="public-key" readonly="readonly"></textarea>
         </div>
     </div>
 </div>
@@ -50,7 +51,7 @@
             <div class="modal-body">
                 <div id="gen-status">This may take a few seconds... <span id="gen-success" class="done-text">Done!</span><span id="gen-error" class="done-text">Error!</span></div>
                 <div class="progress">
-                    <div id="gen-progress-bar" class="progress-bar progress-bar-striped" role="progressbar"></div>
+                    <div id="gen-progress-bar" class="progress-bar" role="progressbar"></div>
                 </div>
             </div>
         </div>

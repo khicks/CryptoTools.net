@@ -1,43 +1,32 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container container-responsive">
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="{{ brand.href }}">{{ brand.label }}</a>
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="{{ brand.href }}">{{ brand.label }}</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             {% if display.navigation %}
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="navbar-nav mr-auto">
                 {% for item in navigation %}
                 {% if item.type == "link" %}
-                <li{% if item.active %} class="active"{% endif %}><a href="{{ item.href }}"><i class="fa {{ item.icon }}"></i> {{item.label}}</a></li>
+                <li class="nav-item {% if item.active %} active{% endif %}"><a class="nav-link" href="{{ item.href }}"><i class="fa {{ item.icon }}"></i> {{item.label}}</a></li>
                 {% elseif item.type == "dropdown" %}
-                <li class="dropdown{% if item.active %} active{% endif %}">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa {{ item.icon }}"></i> {{item.label}} <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
+                <li class="nav-item dropdown{% if item.active %} active{% endif %}">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa {{ item.icon }}"></i> {{item.label}} <span class="caret"></span></a>
+                    <div class="dropdown-menu">
                         {% for item in item.items %}
                         {% if item.type == "link" %}
-                        <li{% if item.active %} class="active"{% endif %}><a href="{{item.href}}"><i class="fa fa-fw {{ item.icon }}"></i> {{item.label}}</a></li>
+                        <a class="dropdown-item{% if item.active %} active{% endif %}" href="{{item.href}}"><i class="fa fa-fw {{ item.icon }}"></i> {{item.label}}</a>
                         {% elseif item.type == "separator" %}
-                        <li role="separator" class="divider"></li>
+                        <div class="dropdown-divider"></div>
                         {% endif %}
                         {% endfor %}
-                    </ul>
+                    </div>
                 </li>
                 {% endif %}
                 {% endfor %}
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                {% if current_user.user_id %}
-                {% else %}
-                <!--<li><button type="button" id="login-button" class="btn btn-success navbar-btn"><i id="login-icon" class="fa fa-sign-in"></i> Log in or Register</button></li>-->
-                {% endif %}
-                <!--<li><a href="{{ webroot }}/profile/"><i class="glyphicon glyphicon-user"></i> {{ currentUser.username }}</a></li>
-                <li><button type="button" id="logoutbutton" class="btn btn-danger navbar-btn"><i id="logout-logo" class="fa fa-sign-out"></i><i id="logout-wheel" class="fa fa-spin fa-spinner"></i> Log out</button></li>-->
             </ul>
             {% endif %}
         </div>

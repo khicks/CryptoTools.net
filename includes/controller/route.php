@@ -34,7 +34,7 @@ class CryptoToolsRoute {
                 'js' => array(
                     'root' => array(
                         //"CryptoJS/aes.js",
-			"CryptoJS/crypto-js.js",
+            "CryptoJS/crypto-js.js",
                         "aes-string.js"
                     )
                 )
@@ -43,7 +43,7 @@ class CryptoToolsRoute {
                 'symmetric' => array(
                     'active' => true,
                     'items' => array(
-                        'aes' => array(
+                        'aes_string' => array(
                             'active' => true
                         )
                     )
@@ -182,7 +182,7 @@ class CryptoToolsRoute {
     public static function page_bitcoin() {
         $cryptotools = new CryptoToolsPage();
         $params = array(
-            'title' => "Bitcoin Toolkit",
+            'title' => "Bitcoin Address Generator",
             'include' => array(
                 'css' => array(
                     'root' => array(

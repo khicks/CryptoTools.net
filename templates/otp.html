@@ -5,46 +5,58 @@
 <p>This tool produces the current time-based one-time password with a given or generated secret. You may also create a QR code with your chosen label.</p>
 
 <div class="row">
-    <div class="col-xs-12 col-sm-6">
-        <h3>Basic</h3>
+    <div class="col-12 col-sm-6">
+        <h2>Basic</h2>
         <div class="row">
-            <div class="col-xs-12 col-lg-8">
+            <div class="col-12 col-md-11">
                 <div class="form-group">
                     <label for="secret">Secret</label>
-                    <input type="text" id="secret" class="form-control" name="secret">
+                    <div class="form-row">
+                        <div class="col-12 col-lg-8 col-xl-9 mb-1">
+                            <input type="text" id="secret" class="form-control text-monospace" name="secret">
+                        </div>
+
+                        <div class="col-12 col-lg-4 col-xl-3">
+                            <button type="button" id="generateButton" class="btn btn-primary btn-block"><i class="fa fa-key"></i> Generate</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xs-12 col-lg-4">
-                <button type="button" id="generateButton" class="btn btn-primary btn-block form-control"><i class="fa fa-key"></i> Generate secret</button>
             </div>
         </div>
-        <h4>One-Time Password (Update in: <span id='updatingIn'></span>)</h4>
-        <div class="row">
-            <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
-                <div class="form-group">
+        <h4>Result</h4>
+        <div class="form-row mb-2">
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3">
+                <div class="form-group mb-0">
                     <label for="otpCurrent">Current</label>
-                    <input type="text" id="otpCurrent" class="form-control input-lg otp" readonly>
+                    <input type="text" id="otpCurrent" class="form-control input-lg otp border" readonly>
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-5 col-md-4 col-lg-3">
-                <div class="form-group">
+            <div class="col-6 col-sm-5 col-md-4 col-lg-3">
+                <div class="form-group mb-0">
                     <label for="otpNext">Next</label>
                     <input type="text" id="otpNext" class="form-control input-lg otp" readonly>
+                </div>
+            </div>
+        </div>
+        <div class="form-row mb-3">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+                <div class="progress">
+                    <div id="update-bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
             </div>
         </div>
 
         <h4>QR Code</h4>
         <div class="row">
-            <div class="col-xs-12 col-md-10 col-lg-8">
+            <div class="col-12 col-md-11">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="name">Account name</label>
                             <input type="text" id="name" class="form-control">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-12 col-sm-6">
                         <div class="form-group">
                             <label for="issuer">Issuer</label>
                             <input type="text" id="issuer" class="form-control">
@@ -57,23 +69,23 @@
             </div>
         </div>
     </div>
-    <div class="col-xs-12 col-sm-6">
-        <h3>Advanced</h3>
+    <div class="col-12 col-sm-6">
+        <h2>Advanced</h2>
         <div class="form-group">
             <label for="secretHex">Secret hex (<span id='secretHexLength'></span>)</label>
-            <input type="text" id="secretHex" class="form-control" readonly>
+            <input type="text" id="secretHex" class="form-control text-monospace" readonly>
         </div>
         <div class="form-group">
             <label for="epoch">Epoch time</label>
-            <input type="text" id="epoch" class="form-control" readonly>
+            <input type="text" id="epoch" class="form-control text-monospace" readonly>
         </div>
         <div class="form-group">
             <label for="epochIteration">Epoch iteration</label>
-            <input type="text" id="epochIteration" class="form-control" readonly>
+            <input type="text" id="epochIteration" class="form-control text-monospace" readonly>
         </div>
         <div class="form-group">
             <label for="hmac">HMAC</label>
-            <input type="text" id="hmac" class="form-control" readonly>
+            <input type="text" id="hmac" class="form-control text-monospace" readonly>
         </div>
     </div>
 </div>

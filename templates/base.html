@@ -5,6 +5,7 @@
 <div id="header">
     {% include "navbar.html" %}
 </div>
+
 <div id="wrapper">
     <div class="container">
         {% if display.title %}
@@ -15,26 +16,10 @@
         </div>
     </div>
 </div>
+
 {% if display.footer %}
 <footer id="footer">
-    <div class="container">
-        {% block footer %}
-        <hr>
-        <div class="row">
-            <div class="col-xs-12 col-sm-5 col-md-4">
-                &copy; Copyright {{ footer.copyright.year }} {{ footer.copyright.name }}
-            </div>
-            <div class="col-xs-12 col-sm-7 col-md-8">
-                <ul id="footer-menu" class="">
-                    {% for item in footer.menu %}
-                    <li class="active"><a href="{{ item.href }}">{{ item.label }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-
-        {% endblock %}
-    </div>
+    {% include "footer.html" %}
 </footer>
 {% endif %}
 </body>

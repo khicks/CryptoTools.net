@@ -1,6 +1,6 @@
-#wrapper {
-    padding-top: 0px;
-}
+/*#wrapper {*/
+/*    padding-top: 0px;*/
+/*}*/
 
 .table {
     margin-top: 20px;
@@ -12,4 +12,8 @@
 
 input[readonly].form-control {
     background-color: #ffffff;
+}
+
+.table td, .table th {
+    padding: 0.5rem;
 }

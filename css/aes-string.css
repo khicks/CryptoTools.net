@@ -1,18 +1,14 @@
-.row {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#ciphertext, #key {
-    font-family: monospace;
-}
+/*.row {*/
+/*    margin-top: 7px;*/
+/*    margin-bottom: 7px;*/
+/*}*/
 
 .readonly {
     background-color: #f5f5f5 !important;
 }
 
-@media (max-width: 767px) {
-    #crypt-buttons {
-        margin-top: 5px;
-    }
-}
+/*@media (max-width: 767px) {*/
+/*    #crypt-buttons {*/
+/*        margin-top: 5px;*/
+/*    }*/
+/*}*/

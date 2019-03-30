@@ -144,9 +144,23 @@ $(function() {
         if (epoch % 30 == 0) updateOtp();
         $("#epoch").val(epoch);
         $('#updatingIn').text(countDown);
+
+        let percentLeft = (countDown / 30) * 100;
+        $('#update-bar').animate({
+            width: percentLeft+"%"
+        }, 300);
+
+        if (countDown <= 7) {
+            $('#update-bar').addClass('bg-danger').removeClass('bg-success');
+            $('#otpCurrent').addClass('border-danger').removeClass('border-success');
+        }
+        else {
+            $('#update-bar').addClass('bg-success').removeClass('bg-danger');
+            $('#otpCurrent').addClass('border-success').removeClass('border-danger');
+        }
     }
 
-    if (window.location.hash.substr(1) == "") {
+    if (window.location.hash.substr(1) === "") {
         generateKey();
     }
     else {

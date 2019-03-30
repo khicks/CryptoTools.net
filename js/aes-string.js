@@ -1,16 +1,16 @@
 $(function() {
-    var encryptButton = $("#encrypt-button");
-    var decryptButton = $("#decrypt-button");
-    var plaintextField = $("#plaintext");
-    var ciphertextField = $("#ciphertext");
-    var keyField = $("#key");
-    var showKeyButton = $("#show-key-button");
-    var genKeyButton = $("#gen-key-button");
+    let encryptButton = $("#encrypt-button");
+    let decryptButton = $("#decrypt-button");
+    let plaintextField = $("#plaintext");
+    let ciphertextField = $("#ciphertext");
+    let keyField = $("#key");
+    let showKeyButton = $("#show-key-button");
+    let genKeyButton = $("#gen-key-button");
 
     encryptButton.on('click', function() {
         decryptButton.removeClass('btn-danger active');
-        decryptButton.addClass('btn-default');
-        encryptButton.removeClass('btn-default');
+        decryptButton.addClass('btn-light');
+        encryptButton.removeClass('btn-light');
         encryptButton.addClass('btn-success active');
         ciphertextField.prop('readonly', 'readonly');
         ciphertextField.addClass('readonly');
@@ -22,8 +22,8 @@ $(function() {
 
     decryptButton.on('click', function() {
         encryptButton.removeClass('btn-success active');
-        encryptButton.addClass('btn-default');
-        decryptButton.removeClass('btn-default');
+        encryptButton.addClass('btn-light');
+        decryptButton.removeClass('btn-light');
         decryptButton.addClass('btn-danger active');
         plaintextField.prop('readonly', 'readonly');
         plaintextField.addClass('readonly');
@@ -51,7 +51,7 @@ $(function() {
         container: 'body',
         placement: 'top',
         title: "Show Key"
-    }).bind('click', function() {
+    }).on('click', function() {
         if (showKeyButton.hasClass("active")) {
             keyField.attr('type', 'password');
             showKeyButton.removeClass("active");
@@ -68,9 +68,9 @@ $(function() {
         placement:'top',
         title: "Generate Key"
     }).bind('click', function() {
-        var key = "";
-        var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for (var i=0; i<16; i++) key += characters.charAt(Math.floor(Math.random()*characters.length));
+        let key = "";
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (let i=0; i<16; i++) key += characters.charAt(Math.floor(Math.random()*characters.length));
 
         keyField.val(key);
         keyField.attr('type', 'text');

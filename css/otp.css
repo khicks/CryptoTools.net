@@ -1,8 +1,8 @@
-@media(min-width: 1200px) {
-    #generateButton {
-        margin-top: 25px;
-    }
-}
+/*@media(min-width: 1200px) {*/
+/*    #generateButton {*/
+/*        margin-top: 25px;*/
+/*    }*/
+/*}*/
 
 .otp {
     text-align: center;
@@ -14,4 +14,13 @@ input[readonly].form-control {
 
 #QRWrapper {
     display: none;
+}
+
+/*.row {*/
+/*    border: 1px solid darkred;*/
+/*}*/
+
+.progress-bar {
+    -webkit-transition: none !important;
+    transition: none !important;
 }

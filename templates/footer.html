@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row text-muted">
+        <div class="col-12 col-lg-6">
+            &copy; Copyright {{ footer.copyright.year }} {{ footer.copyright.name }}
+        </div>
+        <div class="col-12 col-lg-6">
+            <ul class="nav justify-content-end flex-column flex-lg-row">
+                {% for item in footer.menu %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ item.href }}">{{ item.label }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

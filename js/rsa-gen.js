@@ -36,7 +36,7 @@ $(function() {
     });
 
     genModal.on('show.bs.modal', function() {
-        genProgressBar.addClass("active");
+        genProgressBar.addClass("progress-bar-striped progress-bar-animated").removeClass("bg-success");
     }).on('shown.bs.modal', function() {
         var genWorker = new Worker('js/rsa-gen-worker.js');
         genWorker.onmessage = function(oEvent) {
@@ -45,7 +45,7 @@ $(function() {
                 privateKeyBox.val(crypt.getPrivateKey());
                 publicKeyBox.val(crypt.getPublicKey());
                 genSuccess.show();
-                genProgressBar.removeClass("active");
+                genProgressBar.addClass("bg-success").removeClass("progress-bar-striped progress-bar-animated");
                 setTimeout(function() {
                     genModal.modal('hide');
                 }, 1000);

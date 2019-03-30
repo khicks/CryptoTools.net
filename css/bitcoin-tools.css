@@ -1,16 +1,9 @@
-.form-inline {
-    margin-bottom: 20px;
-}
-
-#num-addresses {
-    width: auto;
-    margin-right: 10px;
-}
+/*#num-addresses {*/
+/*    width: auto;*/
+/*}*/
 
 .key-box {
-    width: 100%;
     border: 1px solid #999999;
-    font-family: monospace;
     font-size: 10pt;
     white-space: pre;
 }

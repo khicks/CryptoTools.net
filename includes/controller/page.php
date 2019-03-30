@@ -41,6 +41,7 @@ class CryptoToolsPage extends CryptoTools {
                     'external' => array(),
                     'root' => array(
                         "jquery.min.js",
+                        "popper.min.js",
                         "bootstrap.min.js",
                         "cryptotools.js"
                     )
@@ -133,7 +134,7 @@ class CryptoToolsPage extends CryptoTools {
                             'type' => "link",
                             'href' => "{$this->web_root}/bitcoin",
                             'icon' => "fa-bitcoin",
-                            'label' => "Bitcoin Toolkit",
+                            'label' => "Bitcoin Address Generator",
                             'active' => false
                         )
                     )
