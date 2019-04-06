@@ -70,7 +70,7 @@ $(function() {
     }).bind('click', function() {
         let key = "";
         const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        for (let i=0; i<16; i++) key += characters.charAt(Math.floor(Math.random()*characters.length));
+        for (let i=0; i<32; i++) key += characters.charAt(Math.floor(Math.random()*characters.length));
 
         keyField.val(key);
         keyField.attr('type', 'text');
