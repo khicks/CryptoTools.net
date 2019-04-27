@@ -27,6 +27,10 @@ body {
     padding-left: 12px;
 }
 
+div.code-block {
+    background-color: #f5f5f5;
+}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -43,27 +47,3 @@ footer a {
 footer .nav-link {
     padding: 0 1rem;
 }
-
-/*@media (min-width: 768px) {*/
-/*    #footer-menu {*/
-/*        margin-right: 0;*/
-/*        list-style: none;*/
-/*        float: right;*/
-/*    }*/
-/*    #footer-menu > li {*/
-/*        padding-left: 20px;*/
-/*        display: inline-block;*/
-/*        float: left;*/
-/*    }*/
-/*}*/
-/*@media (max-width: 767px) {*/
-/*    #footer-menu {*/
-/*        list-style: none;*/
-/*        float: left;*/
-/*        padding-left: 0;*/
-/*    }*/
-/*    #footer-menu > li {*/
-/*        padding-right: 20px;*/
-/*        display: inline-block;*/
-/*    }*/
-/*}*/
