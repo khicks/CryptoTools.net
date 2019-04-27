@@ -3,84 +3,84 @@
 class CryptoToolsRoute {
     public static function page_home() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "Home",
-            'include' => array(
-                'js' => array(
-                    'root' => array(
+            'include' => [
+                'js' => [
+                    'root' => [
                         "home.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'home' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'home' => [
                     'active' => true
-                )
-            )
-        );
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("home.html", $params);
     }
 
     public static function page_aes_string() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "AES String Encryption and Decryption",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "aes-string.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         //"CryptoJS/aes.js",
             "CryptoJS/crypto-js.js",
                         "aes-string.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'symmetric' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'symmetric' => [
                     'active' => true,
-                    'items' => array(
-                        'aes_string' => array(
+                    'items' => [
+                        'aes_string' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("aes-string.html", $params);
     }
 
     public static function page_rsa_gen() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "RSA Key Generator",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "rsa-gen.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         "JSEncrypt/jsencrypt.min.js",
                         "rsa-gen.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'asymmetric' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'asymmetric' => [
                     'active' => true,
-                    'items' => array(
-                        'rsagen' => array(
+                    'items' => [
+                        'rsagen' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("rsa-gen.html", $params);
     }
 
@@ -117,298 +117,315 @@ class CryptoToolsRoute {
 
     public static function page_hash_string() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "String Hash Calculator",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "hash-string.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         "CryptoJS/md5.js",
                         "CryptoJS/ripemd160.js",
                         "sha.js",
                         "hash-string.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'hashing' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'hashing' => [
                     'active' => true,
-                    'items' => array(
-                        'hash_string' => array(
+                    'items' => [
+                        'hash_string' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("hash-string.html", $params);
     }
 
     public static function page_otp() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "One-Time Password Calculator",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "otp.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         "qrcode.min.js",
                         "sha.js",
                         "otp.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'hashing' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'hashing' => [
                     'active' => true,
-                    'items' => array(
-                        'otp' => array(
+                    'items' => [
+                        'otp' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("otp.html", $params);
     }
 
     public static function page_base64() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "Base64 Converter",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "base64.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         "base64.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'other' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'other' => [
                     'active' => true,
-                    'items' => array(
-                        'base64' => array(
+                    'items' => [
+                        'base64' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("base64.html", $params);
     }
 
     public static function page_bitcoin() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "Bitcoin Address Generator",
-            'include' => array(
-                'css' => array(
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'root' => [
                         "bitcoin-tools.css"
-                    )
-                ),
-                'js' => array(
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'root' => [
                         "bitcoinjs.min.js",
                         "bitcoin-tools.js"
-                    )
-                )
-            ),
-            'navigation' => array(
-                'other' => array(
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'other' => [
                     'active' => true,
-                    'items' => array(
-                        'bitcoin-tools' => array(
+                    'items' => [
+                        'bitcoin-tools' => [
                             'active' => true
-                        )
-                    )
-                )
-            )
-        );
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("bitcoin-tools.html", $params);
     }
 
     public static function page_about() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "About"
-        );
+        ];
         $cryptotools->displayTemplate("about.html", $params);
     }
 
     public static function page_attributions() {
         $cryptotools = new CryptoToolsPage();
-        $params = array(
+        $params = [
             'title' => "Attributions",
-            'content' => array(
-                'attributions' => array(
-                    'crypto' => array(
+            'content' => [
+                'attributions' => [
+                    'crypto' => [
                         'label' => "Cryptographic Utilities",
-                        'items' => array(
-                            array(
-                                'name' => array(
+                        'items' => [
+                            [
+                                'name' => [
                                     'label' => "BitcoinJS",
                                     'href' => "https://bitcoinjs.org"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "bitcoinjs-lib contributors",
                                     'href' => "https://github.com/bitcoinjs/bitcoinjs-lib/graphs/contributors"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "MIT",
                                     'href' => "https://github.com/bitcoinjs/bitcoinjs-lib/blob/master/LICENSE"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "Bitcoin library"
-                                )
-                            ),
-                            array(
-                                'name' => array(
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "CryptoJS",
                                     'href' => "https://code.google.com/archive/p/crypto-js/"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Jeff Mott",
                                     'href' => "https://code.google.com/archive/p/crypto-js/wikis/License.wiki"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "New BSD License",
                                     'href' => "https://code.google.com/archive/p/crypto-js/"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "Encryption and hashing library"
-                                )
-                            ),
-                            array(
-                                'name' => array(
+                                ]
+                            ],
+                            [
+                                'name' => [
+                                    'label' => "Elliptic",
+                                    'href' => "https://github.com/indutny/elliptic",
+                                ],
+                                'authors' => [
+                                    'label' => "Fedor Indutny",
+                                    'href' => "https://github.com/indutny"
+                                ],
+                                'license' => [
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/indutny/elliptic#license"
+                                ],
+                                'description' => [
+                                    'label' => "DHE library"
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "JSEncrypt",
                                     'href' => "https://github.com/travist/jsencrypt"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Travis Tidwell",
                                     'href' => "https://github.com/travist"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "MIT",
                                     'href' => "https://github.com/travist/jsencrypt/blob/master/LICENSE.txt"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "RSA library"
-                                )
-                            ),
-                            array(
-                                'name' => array(
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "jsSHA",
                                     'href' => "https://github.com/Caligatio/jsSHA"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Brian Turek",
                                     'href' => "https://github.com/Caligatio"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "New BSD License",
                                     'href' => "https://github.com/Caligatio/jsSHA/blob/master/LICENSE"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "Enhanced SHA library"
-                                )
-                            )
-                        )
-                    ),
-                    'other_js' => array(
+                                ]
+                            ],
+                        ]
+                    ],
+                    'other_js' => [
                         'label' => "Other JavaScript Libraries",
-                        'items' => array(
-                            array(
-                                'name' => array(
+                        'items' => [
+                            [
+                                'name' => [
                                     'label' => "qrcode.js",
                                     'href' => "https://davidshimjs.github.io/qrcodejs"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Sangmin, Shim",
                                     'href' => "https://github.com/davidshimjs"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "MIT",
                                     'href' => "https://github.com/davidshimjs/qrcodejs/blob/master/LICENSE",
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "QR code generator"
-                                )
-                            )
-                        )
-                    ),
-                    'design' => array(
+                                ]
+                            ]
+                        ]
+                    ],
+                    'design' => [
                         'label' => "Design",
-                        'items' => array(
-                            array(
-                                'name' => array(
+                        'items' => [
+                            [
+                                'name' => [
                                     'label' => "Bootstrap",
                                     'href' => "https://getbootstrap.com/"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Mark Otto, Jacob Thornton",
                                     'href' => "https://getbootstrap.com/about/"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "MIT",
                                     'href' => "https://github.com/twbs/bootstrap/blob/master/LICENSE"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "CSS framework"
-                                )
-                            ),
-                            array(
-                                'name' => array(
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "Font Awesome",
                                     'href' => "http://fontawesome.io/"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "Dave Gandy",
                                     'href' => "https://twitter.com/davegandy"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "MIT",
                                     'href' => "http://fontawesome.io/"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "Icons"
-                                )
-                            ),
-                            array(
-                                'name' => array(
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "Lock icon",
                                     'href' => "https://commons.wikimedia.org/wiki/File:Padlock-blue.svg"
-                                ),
-                                'authors' => array(
+                                ],
+                                'authors' => [
                                     'label' => "AJ Ashton",
                                     'href' => "https://commons.wikimedia.org/wiki/User:Eleassar"
-                                ),
-                                'license' => array(
+                                ],
+                                'license' => [
                                     'label' => "Public domain",
                                     'href' => "https://commons.wikimedia.org/wiki/File:Padlock-blue.svg"
-                                ),
-                                'description' => array(
+                                ],
+                                'description' => [
                                     'label' => "Favicon"
-                                )
-                            )
-                        )
-                    )
-                )
-            )
-        );
+                                ]
+                            ]
+                        ]
+                    ]
+                ]
+            ]
+        ];
         $cryptotools->displayTemplate("attributions.html", $params);
     }
 }

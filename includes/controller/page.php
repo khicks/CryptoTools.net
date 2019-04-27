@@ -24,75 +24,75 @@ class CryptoToolsPage extends CryptoTools {
     }
 
     public function getTemplateParams($params = array()) {
-        $init_params = array(
+        $init_params = [
             'appname' => $this->config['app_name'],
             'webroot' => $this->web_root,
             'google_analytics_tracking_id' => $this->config['google_analytics_tracking_id'],
-            'include' => array(
-                'css' => array(
-                    'external' => array(),
-                    'root' => array(
+            'include' => [
+                'css' => [
+                    'external' => [],
+                    'root' => [
                         "bootstrap.min.css",
                         "font-awesome.min.css",
                         "cryptotools.css"
-                    )
-                ),
-                'js' => array(
-                    'external' => array(),
-                    'root' => array(
+                    ]
+                ],
+                'js' => [
+                    'external' => [],
+                    'root' => [
                         "jquery.min.js",
                         "popper.min.js",
                         "bootstrap.min.js",
                         "cryptotools.js"
-                    )
-                )
-            ),
-            'display' => array(
+                    ]
+                ]
+            ],
+            'display' => [
                 'navigation' => true,
                 'logout' => $this->current_user->isLoggedIn(),
                 'title' => true,
                 'footer' => true
-            ),
-            'brand' => array(
+            ],
+            'brand' => [
                 'href' => "{$this->web_root}/",
                 'label' => $this->config['app_name']
-            ),
-            'navigation' => array(
-                'home' => array(
+            ],
+            'navigation' => [
+                'home' => [
                     'type' => "link",
                     'href' => "{$this->web_root}/",
                     'icon' => "fa-home",
                     'label' => "Home",
                     'active' => false
-                ),
-                'symmetric' => array(
+                ],
+                'symmetric' => [
                     'type' => "dropdown",
                     'icon' => "fa-exchange",
                     'label' => "Symmetric",
                     'active' => false,
-                    'items' => array(
-                        'aes_string' => array(
+                    'items' => [
+                        'aes_string' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/aes",
                             'icon' => "fa-key",
                             'label' => "AES String Encryption and Decryption",
                             'active' => false
-                        )
-                    )
-                ),
-                'asymmetric' => array(
+                        ]
+                    ]
+                ],
+                'asymmetric' => [
                     'type' => "dropdown",
                     'icon' => "fa-refresh",
                     'label' => "Asymmetric",
                     'active' => false,
-                    'items' => array(
-                        'rsagen' => array(
+                    'items' => [
+                        'rsagen' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/rsagen",
                             'icon' => "fa-certificate",
                             'label' => "RSA Key Generator",
                             'active' => false
-                        ),
+                        ],
                         'dhe' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/dhe",
@@ -100,84 +100,84 @@ class CryptoToolsPage extends CryptoTools {
                             'label' => "Diffie-Hellman Key Exchange",
                             'active' => false
                         ]
-                    )
-                ),
-                'hashing' => array(
+                    ]
+                ],
+                'hashing' => [
                     'type' => "dropdown",
                     'icon' => "fa-random",
                     'label' => "Hashing",
                     'active' => false,
-                    'items' => array(
-                        'hash_string' => array(
+                    'items' => [
+                        'hash_string' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/hash",
                             'icon' => "fa-calculator",
                             'label' => "String Hash Calculator",
                             'active' => false
-                        ),
-                        'otp' => array(
+                        ],
+                        'otp' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/otp",
                             'icon' => "fa-clock-o",
                             'label' => "One-Time Password Calculator",
                             'active' => false
-                        )
-                    )
-                ),
-                'other' => array(
+                        ]
+                    ]
+                ],
+                'other' => [
                     'type' => "dropdown",
                     'icon' => "fa-question",
                     'label' => "Other",
                     'active' => false,
-                    'items' => array(
-                        'base64' => array(
+                    'items' => [
+                        'base64' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/base64",
                             'icon' => "fa-retweet",
                             'label' => "Base64 Converter",
                             'active' => false
-                        ),
-                        'bitcoin-tools' => array(
+                        ],
+                        'bitcoin-tools' => [
                             'type' => "link",
                             'href' => "{$this->web_root}/bitcoin",
                             'icon' => "fa-bitcoin",
                             'label' => "Bitcoin Address Generator",
                             'active' => false
-                        )
-                    )
-                )
-            ),
-            'footer' => array(
-                'copyright' => array(
+                        ]
+                    ]
+                ]
+            ],
+            'footer' => [
+                'copyright' => [
                     'year' => date("Y"),
                     'name' => "CryptoTools.net"
-                ),
-                'menu' => array(
-                    'home' => array(
+                ],
+                'menu' => [
+                    'home' => [
                         'href' => "{$this->web_root}/",
                         'label' => "Home"
-                    ),
-                    'about' => array(
+                    ],
+                    'about' => [
                         'href' => "{$this->web_root}/about",
                         'label' => "About"
-                    ),
-                    'github' => array(
+                    ],
+                    'github' => [
                         'href' => "{$this->config['github_link']}",
                         'label' => "GitHub"
-                    ),
-                    'attributions' => array(
+                    ],
+                    'attributions' => [
                         'href' => "{$this->web_root}/attributions",
                         'label' => "Attributions"
-                    ),
-                    'contact' => array(
+                    ],
+                    'contact' => [
                         'href' => "{$this->web_root}/contact",
                         'label' => "Contact"
-                    )
-                )
-            ),
+                    ]
+                ]
+            ],
             'current_user' => $this->current_user,
-            'content' => array()
-        );
+            'content' => []
+        ];
 
         $page_params = $this->mergeParams($init_params, $params);
 

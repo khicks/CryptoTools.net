@@ -4,24 +4,26 @@
 
 {% for attrname, attrtable in content.attributions %}
 <h3 id="{{ attrname }}-header">{{ attrtable.label }}</h3>
-<table id="{{ attrname }}-table" class="table table-hover table-responsive">
-    <thead>
-    <th>Name</th>
-    <th>Author(s)</th>
-    <th>License</th>
-    <th>Description</th>
-    </thead>
-    <tbody>
-    {% for item in attrtable.items %}
-    <tr>
-        <td><a href="{{ item.name.href }}" target="_blank">{{ item.name.label }}</a></td>
-        <td><a href="{{ item.authors.href }}" target="_blank">{{ item.authors.label }}</a></td>
-        <td><a href="{{ item.license.href }}" target="_blank">{{ item.license.label }}</a></td>
-        <td>{{ item.description.label }}</td>
-    </tr>
-    {% endfor %}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table id="{{ attrname }}-table" class="table table-hover">
+        <thead>
+        <th>Name</th>
+        <th>Author(s)</th>
+        <th>License</th>
+        <th>Description</th>
+        </thead>
+        <tbody>
+        {% for item in attrtable.items %}
+        <tr>
+            <td><a href="{{ item.name.href }}" target="_blank">{{ item.name.label }}</a></td>
+            <td><a href="{{ item.authors.href }}" target="_blank">{{ item.authors.label }}</a></td>
+            <td><a href="{{ item.license.href }}" target="_blank">{{ item.license.label }}</a></td>
+            <td>{{ item.description.label }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 {% endfor %}
 
 {% endblock %}
