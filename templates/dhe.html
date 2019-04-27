@@ -60,8 +60,47 @@
 
 <div class="row">
     <div class="col-12">
-        <h3>Description</h3>
+        <h2>Description</h2>
         <p>This tool will generate a key pair for you, of which you can send the public key to a partner. Once your partner sends you their public key, paste it into their public key box. If done successfully, you two should have an identical shared secret. You may use the shared secret to encrypt messages to each other, possibly by using the <a href="/aes">AES String Encryption and Decryption</a> tool.</p>
+
+        <h2>Do It Yourself</h2>
+        <p>OpenSSL can help you perform a Diffie-Hellman key exchange, but it is not directly compatible with this tool. The principle, however, is the same.</p>
+        <p>During this process, we will need to generate 5 elements before deriving a shared secret:</p>
+        <ul>
+            <li>A common base</li>
+            <li>Partner 1's private key</li>
+            <li>Partner 1's public key</li>
+            <li>Partner 2's private key</li>
+            <li>Partner 2's public key</li>
+        </ul>
+
+        <h4>Generate a Common Base</h4>
+        <p>Use this command to generate a common base, <b>dhp.pem</b>. This <i>DH Parameters</i> key can be shared in a public manner between the two parties. It is not a secret. The library used by CryptoTools.net uses a constant value for its base.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl genpkey -genparam -algorithm DH -out dhp.pem</pre>
+        </div>
+
+        <h4>Partner 1's Key Pair</h4>
+        <p>Partner 1 should be in possession of the <b>dhp.pem</b> file, then they can generate their private and public keys, <b>dhpriv1.pem</b> and <b>dhpub1.pem</b>, respectively.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl genpkey -paramfile dhp.pem -out dhpriv1.pem<br>$ openssl pkey -in dhpriv1.pem -pubout -out dhpub1.pem</pre>
+        </div>
+
+        <h4>Partner 2's Key Pair</h4>
+        <p>Likewise, Partner 2 should be in posession of the same <b>dhp.pem</b> file and generate their own private and public keys.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl genpkey -paramfile dhp.pem -out dhpriv2.pem<br>$ openssl pkey -in dhpriv2.pem -pubout -out dhpub2.pem</pre>
+        </div>
+
+        <h4>Derive Shared Secret</h4>
+        <p>Partner 1 should share <b>dhpub1.pem</b> with Partner 2, and Partner 2 should share <b>dhpub2.pem</b> with Partner 1. Once they have exchanged public keys, they may derive the shared secret. Partner 1's copy of the shared secret will be named <b>shared1.bin</b>, and Partner 2's will be named <b>shared2.bin</b>.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">## Partner 1<br>$ openssl pkeyutl -derive -inkey dhpriv1.pem -peerkey dhpub2.pem -out shared1.bin<br>## Partner 2<br>$ openssl pkeyutl -derive -inkey dhpriv2.pem -peerkey dhpub1.pem -out shared2.bin</pre>
+        </div>
+        <p>The content of files <b>shared1.bin</b> and <b>shared2.bin</b> should be exactly the same. Since they are binary files and not easily readable by humans, you may verify that they are the same like so:</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ sha256sum shared*.bin</pre>
+        </div>
     </div>
 </div>
 

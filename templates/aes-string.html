@@ -40,12 +40,12 @@
 
 <div class="row">
     <div class="col-12">
-        <h3>Description</h3>
+        <h2>Description</h2>
         <p>The <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">Advanced Encryption Standard</a> is the most commonly used encryption algorithm in use on computers and over the internet.</p>
         <p>To encrypt a string, select the green <b>Encrypt</b> button, enter the text you want to encrypt in the upper <b>Plaintext</b> box, and enter the key or password that it should be encrypted with in the <b>Key</b> box. The resulting encrypted output will appear in the lower <b>Ciphertext</b> box. Likewise, to decrypt a ciphertext, select the red <b>Decrypt</b> button, enter the text you want to decrypt in the <b>Ciphertext</b> box, and the key used to decrypt it in the <b>Key</b> box. The decrypted output will appear in the <b>Plaintext</b> box.</p>
         <p>For this tool to be useful between two parties, you and your partner will need to share a secret key. To generate a shared secret over an insecure channel, use the <a href="/dhe">Diffie-Hellman Key Exchange</a> tool.</p>
 
-        <h3>Do It Yourself</h3>
+        <h2>Do It Yourself</h2>
         <p>With OpenSSL, you can encrypt text in the same way as this tool like so.</p>
         <div class="p-3 mb-3 rounded code-block">
             <pre class="m-0">$ echo "here is my text to encrypt" | openssl enc -aes-256-cbc -base64</pre>

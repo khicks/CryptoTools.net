@@ -2,6 +2,7 @@ $(function() {
     const generateButton = $('#generate-button');
     const myPrivate = $('#my-private');
     const myPublic = $('#my-public');
+    const partnerPrivate = $('#partner-private');
     const partnerPublic = $('#partner-public');
     const sharedKey = $('#shared-key');
     let myKey;
@@ -40,13 +41,21 @@ $(function() {
     myPrivate.tooltip({
         container: 'body',
         placement: 'top',
-        title: "Paste an existing private key here or click \"Generate\". Keep this key secret."
+        html: true,
+        title: "Paste an existing private key here or click \"Generate\".<br>Do <i>not</i> share this with your partner."
     });
 
     myPublic.tooltip({
         container: 'body',
         placement: 'top',
         title: "Send your public key to your partner."
+    });
+
+    partnerPrivate.tooltip({
+        container: 'body',
+        placement: 'top',
+        html: true,
+        title: "Your partner should <i>not</i> share their private key with you.",
     });
 
     partnerPublic.tooltip({

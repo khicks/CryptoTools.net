@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<p>You may generate an RSA private key with the help of this tool. Additionally, it will display the public key of a generated or pasted private key. This tool works entirely on the <b>client</b> side. No information is transmitted to the server.</b></p>
+<p>You may generate an RSA private key with the help of this tool. Additionally, it will display the public key of a generated or pasted private key.</p>
 
 <div class="row mb-3">
     <div class="col-12">
@@ -54,6 +54,44 @@
                     <div id="gen-progress-bar" class="progress-bar" role="progressbar"></div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="row">
+    <div class="col-12">
+        <h2>Description</h2>
+        <p><a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)" target="_blank">RSA</a> is an asymmetric encryption algorithm. With a given key pair, data that is encrypted with one key can only be decrypted by the other. This is useful for encrypting data between a large number of parties; only one key pair per person need exist. RSA is widely used across the internet with HTTPS.</p>
+        <p>To generate a key pair, select the bit length of your key pair and click <b>Generate key pair</b>. Depending on length, your browser may take a long time to generate the key pair. A 1024-bit key will usually be ready instantly, while a 4096-bit key may take up to several minutes. For a faster and more secure method, see <b>Do It Yourself</b> below.</p>
+        <p>CryptoTools.net does not yet have a tool for facilitating the encryption and decryption of data using RSA, but you may <b>Do It Yourself</b> with the instructions below.</p>
+
+        <h2>Do It Yourself</h2>
+        <p>For these steps, you will need a command line shell with OpenSSL. Ideally, you should have a private key of your own and a public key from someone else. For demonstration, we will only use a single key pair.</p>
+
+        <h4>Generate Private Key</h4>
+        <p>Run this command to generate a 4096-bit private key and output it to the <b>private.pem</b> file. If you like, you may change the key length and/or output file.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl genrsa </pre>
+        </div>
+
+        <h4>Derive Public Key</h4>
+        <p>Given a private key, you may derive its public key and output it to <b>public.pem</b> using this command. (You may also paste your OpenSSL-generated private key into the form above to get its public key.) </p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl rsa -in private.pem -pubout -out public.pem</pre>
+        </div>
+
+        <h4>Encrypt Data</h4>
+        <p>We can now use this key pair to encrypt and decrypt a file, <b>data.txt</b>.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl rsautl -encrypt -inkey public.pem -pubin -in data.txt -out data.txt.enc</pre>
+        </div>
+
+        <h4>Decrypt Data</h4>
+        <p>Given the encrypted file from the previous step, you may decrypt it like so.</p>
+        <div class="p-3 mb-3 rounded code-block">
+            <pre class="m-0">$ openssl rsautl -decrypt -inkey private.pem -in data.txt.enc -out data.txt</pre>
         </div>
     </div>
 </div>
