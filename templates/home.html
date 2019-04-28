@@ -3,6 +3,49 @@
 {% block content %}
 
 <p>Welcome to CryptoTools.net! This site containes a suite of cryptographic utilities for convenience that operate entirely on the <b>client side</b>. No calculations take place on the server, nor is any data generated or used here sent to the server.</p>
-<p>You can view our source on <a href="https://github.com/khicks/CryptoTools.net" target="_blank">GitHub</a>.</p>
+<p>If you like, you can view our source on <a href="https://github.com/khicks/CryptoTools.net" target="_blank">GitHub</a>.</p>
+
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/aes">AES Encryption</a></h4>
+                <p class="card-text">Encrypt and decrypt strings using OpenSSL-compatible AES.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/rsagen">RSA Key Generator</a></h4>
+                <p class="card-text">Generate an RSA public-private key pair, compatible with OpenSSL.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/rsagen">Diffie-Hellman Exchange</a></h4>
+                <p class="card-text">Derive a shared secret over an insecure channel.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/rsagen">String Hash Calculator</a></h4>
+                <p class="card-text">Calculate various hashes, like MD5, SHA-256, the SHA-3 family, and others.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-4 mb-3">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title"><a href="/rsagen">TOTP Calculator</a></h4>
+                <p class="card-text">RFC 6238-compatible time-based one-time password calculator and QR code generator, compatible with Google Authenticator, Authy, and others.</p>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

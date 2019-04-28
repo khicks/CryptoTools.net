@@ -350,6 +350,40 @@ class CryptoToolsRoute {
                         'items' => [
                             [
                                 'name' => [
+                                    'label' => "jQuery",
+                                    'href' => "https://jquery.com/"
+                                ],
+                                'authors' => [
+                                    'label' => "The jQuery Foundation",
+                                    'href' => "https://jquery.org/team/"
+                                ],
+                                'license' => [
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/jquery/jquery/blob/master/LICENSE.txt",
+                                ],
+                                'description' => [
+                                    'label' => "DOM traversal, event handling, etc."
+                                ]
+                            ],
+                            [
+                                'name' => [
+                                    'label' => "popper.js",
+                                    'href' => "https://popper.js.org/"
+                                ],
+                                'authors' => [
+                                    'label' => "Federico Zivolo",
+                                    'href' => "https://github.com/FezVrasta"
+                                ],
+                                'license' => [
+                                    'label' => "MIT",
+                                    'href' => "https://github.com/FezVrasta/popper.js/blob/master/LICENSE.md",
+                                ],
+                                'description' => [
+                                    'label' => "Tooltips"
+                                ]
+                            ],
+                            [
+                                'name' => [
                                     'label' => "qrcode.js",
                                     'href' => "https://davidshimjs.github.io/qrcodejs"
                                 ],
