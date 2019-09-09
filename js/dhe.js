@@ -7,29 +7,39 @@ $(function() {
     const sharedKey = $('#shared-key');
     let myKey;
 
-    // let myKey = ec.genKeyPair();
-    //
-    // myPrivate.val(myKey.getPrivate().toString('hex'));
-    // myPublic.val(myKey.getPublic().encode('hex'));
-
     $("input:text").focus(function() {
         $(this).select();
     }).on('input propertychange', function() {
         updateKeys();
     });
 
+    function hexToBase64(str) {
+        return btoa(String.fromCharCode.apply(null,
+            str.replace(/\r|\n/g, "").replace(/([\da-fA-F]{2}) ?/g, "0x$1 ").replace(/ +$/, "").split(" "))
+        );
+    }
+
+    function base64ToHex(str) {
+        for (var i = 0, bin = atob(str.replace(/[ \r\n]+$/, "")), hex = []; i < bin.length; ++i) {
+            let tmp = bin.charCodeAt(i).toString(16);
+            if (tmp.length === 1) tmp = "0" + tmp;
+            hex[hex.length] = tmp;
+        }
+        return hex.join(" ");
+    }
+
     function generateMyKey() {
         myKey = ec.genKeyPair();
-        myPrivate.val(myKey.getPrivate().toString('hex'));
+        myPrivate.val(hexToBase64(myKey.getPrivate().toString('hex')));
     }
 
     function updateKeys() {
         myKey = ec.keyFromPrivate(myPrivate.val());
-        myPublic.val(myKey.getPublic().encode('hex'));
+        myPublic.val(hexToBase64(myKey.getPublic().encode('hex')));
 
         if (myPublic.val().length > 0 && partnerPublic.val().length > 0) {
-            let partnerKey = ec.keyFromPublic(partnerPublic.val(), 'hex');
-            sharedKey.val(myKey.derive(partnerKey.getPublic()).toString(16));
+            let partnerKey = ec.keyFromPublic(base64ToHex(partnerPublic.val()), 'hex');
+            sharedKey.val(hexToBase64(myKey.derive(partnerKey.getPublic()).toString(16)));
         }
     }
 

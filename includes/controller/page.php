@@ -11,16 +11,27 @@ class CryptoToolsPage extends CryptoTools {
 
     private function loadTwig() {
         $templates[] = $this->php_root."/templates";
-        $loader = new Twig_Loader_Filesystem($templates);
-        $this->twig = new Twig_Environment($loader);
+        $loader = new Twig\Loader\FilesystemLoader($templates);
+        $this->twig = new Twig\Environment($loader);
     }
 
     public function renderTemplate($filename, $params = array()) {
-        return $this->twig->render($filename, $this->getTemplateParams($params));
+        try {
+            return $this->twig->render($filename, $this->getTemplateParams($params));
+        }
+        catch (Twig\Error\Error $e) {
+            // TODO: Better handling of these.
+            die("Could not render page.");
+        }
     }
 
     public function displayTemplate($filename, $params = array()) {
-        $this->twig->display($filename, $this->getTemplateParams($params));
+        try {
+            $this->twig->display($filename, $this->getTemplateParams($params));
+        }
+        catch (Twig\Error\Error $e) {
+            die("Could not display page.");
+        }
     }
 
     public function getTemplateParams($params = array()) {
