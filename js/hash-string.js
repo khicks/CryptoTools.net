@@ -19,7 +19,7 @@ $(document).ready(function() {
 
 function shaHash(method, value) {
     if (value == null) value = "";
-    var hashObj = new jsSHA(method, "TEXT");
+    let hashObj = new jsSHA(method, "TEXT");
     hashObj.update(value);
     return hashObj.getHash("HEX");
 }

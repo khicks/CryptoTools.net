@@ -148,6 +148,39 @@ class CryptoToolsRoute {
         $cryptotools->displayTemplate("hash-string.html", $params);
     }
 
+    public static function page_hmac_string() {
+        $cryptotools = new CryptoToolsPage();
+        $params = [
+            'title' => "String HMAC Calculator",
+            'include' => [
+                'css' => [
+                    'root' => [
+                        "hmac-string.css"
+                    ]
+                ],
+                'js' => [
+                    'root' => [
+                        "CryptoJS/hmac-md5.js",
+                        "CryptoJS/hmac-ripemd160.js",
+                        "sha.js",
+                        "hmac-string.js"
+                    ]
+                ]
+            ],
+            'navigation' => [
+                'hashing' => [
+                    'active' => true,
+                    'items' => [
+                        'hmac_string' => [
+                            'active' => true
+                        ]
+                    ]
+                ]
+            ]
+        ];
+        $cryptotools->displayTemplate("hmac-string.html", $params);
+    }
+
     public static function page_otp() {
         $cryptotools = new CryptoToolsPage();
         $params = [

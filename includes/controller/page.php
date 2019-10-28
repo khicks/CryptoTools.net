@@ -11,27 +11,16 @@ class CryptoToolsPage extends CryptoTools {
 
     private function loadTwig() {
         $templates[] = $this->php_root."/templates";
-        $loader = new Twig\Loader\FilesystemLoader($templates);
-        $this->twig = new Twig\Environment($loader);
+        $loader = new Twig_Loader_Filesystem($templates);
+        $this->twig = new Twig_Environment($loader);
     }
 
     public function renderTemplate($filename, $params = array()) {
-        try {
-            return $this->twig->render($filename, $this->getTemplateParams($params));
-        }
-        catch (Twig\Error\Error $e) {
-            // TODO: Better handling of these.
-            die("Could not render page.");
-        }
+        return $this->twig->render($filename, $this->getTemplateParams($params));
     }
 
     public function displayTemplate($filename, $params = array()) {
-        try {
-            $this->twig->display($filename, $this->getTemplateParams($params));
-        }
-        catch (Twig\Error\Error $e) {
-            die("Could not display page.");
-        }
+        $this->twig->display($filename, $this->getTemplateParams($params));
     }
 
     public function getTemplateParams($params = array()) {
@@ -124,6 +113,13 @@ class CryptoToolsPage extends CryptoTools {
                             'href' => "{$this->web_root}/hash",
                             'icon' => "fa-calculator",
                             'label' => "String Hash Calculator",
+                            'active' => false
+                        ],
+                        'hmac_string' => [
+                            'type' => "link",
+                            'href' => "{$this->web_root}/hmac",
+                            'icon' => "fa-id-card-o",
+                            'label' => "String HMAC Calculator",
                             'active' => false
                         ],
                         'otp' => [

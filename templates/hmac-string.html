@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>This tool calculates various keyed-hash message authentication codes ("HMAC") of a given string. HMAC is a form of hashing with the addition of a secret key.</p>
+
+<div class="row mb-2">
+    <div class="col-12">
+        <textarea id="input" class="form-control" rows="5" placeholder="Input text"></textarea>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span id="key-icon" class="input-group-text"><i class="fa fa-key"></i></span>
+            </div>
+            <input type="password" id="key" class="form-control text-monospace" placeholder="Key" aria-describedby="key-icon">
+            <div class="input-group-append">
+                <button type="button" id="show-key-button" class="btn btn-light btn-outline-secondary"><i class="fa fa-eye"></i></button>
+                <button type="button" id="gen-key-button" class="btn btn-light btn-outline-secondary"><i class="fa fa-repeat"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="120px">Algorithm</th>
+        <th>Output</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>MD5</td>
+        <td><input type="text" id="output-md5" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-1</td>
+        <td><input type="text" id="output-sha1" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-224</td>
+        <td><input type="text" id="output-sha224" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-256</td>
+        <td><input type="text" id="output-sha256" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-384</td>
+        <td><input type="text" id="output-sha384" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA-512</td>
+        <td><input type="text" id="output-sha512" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-224</td>
+        <td><input type="text" id="output-sha3224" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-256</td>
+        <td><input type="text" id="output-sha3256" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-384</td>
+        <td><input type="text" id="output-sha3384" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>SHA3-512</td>
+        <td><input type="text" id="output-sha3512" class="form-control" readonly></td>
+    </tr>
+    <tr>
+        <td>RIPEMD-160</td>
+        <td><input type="text" id="output-ripemd160" class="form-control" readonly></td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}
