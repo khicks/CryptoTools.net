@@ -1,7 +1,7 @@
-importScripts("JSEncrypt/jsencrypt-worker.min.js");
-
 onmessage = function(oEvent) {
-    var keySize = oEvent.data;
+    importScripts("JSEncrypt/jsencrypt-worker.min.js");
+
+    let keySize = oEvent.data;
 
     postMessage({
         status: "starting",
