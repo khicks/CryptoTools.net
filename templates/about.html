@@ -2,6 +2,47 @@
 
 {% block content %}
 
-<p>About page.</p>
+<p>CryptoTools.net is a suite of cryptographic utilities designed for ease of use and client side only calculations. With tools for AES, hashing, OTP, and more, CryptoTools.net offers quick and easy access to much of the same functionality as OpenSSL and other command line utilities. All operations take place client side, so no data is ever sent to the server.</p>
+
+<h2>Links</h2>
+<div class="row">
+    <div class="col-12 col-xl-8">
+        <table class="table">
+            <tr>
+                <th>Type</th>
+                <th>URL</th>
+            </tr>
+            <tr>
+                <td>Clearnet</td>
+                <td><a href="https://cryptotools.net/">cryptotools.net</a></td>
+            </tr>
+            <tr>
+                <td>Tor Onion v3</td>
+                <td><a href="http://sirh5ymakqk42c4pyghdtgti7nzhx3xlncrtvoj2ttaybj3vv7tppzqd.onion/">sirh5ymakqk42c4pyghdtgti7nzhx3xlncrtvoj2ttaybj3vv7tppzqd.onion</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<h2>Use Cases</h2>
+
+<p>While each of these tools serve a single function, they can be used in combination with each other or other applications to achieve a desired goal.</p>
+
+<h3>End-to-End Messaging with Forward Secrecy</h3>
+
+<p>Two parties could use a shared key with the <a href="/aes">AES tool</a> to exchange encrypted messages, but they risk their conversation being decrypted by an adversary should they ever obtain the key. However, the two parties could use the <a href="/hmac">HMAC Calculator</a> and the <a href="/dhe">Diffie-Hellman Key Exchange</a> tools to achieve <a href="https://en.wikipedia.org/wiki/Forward_secrecy">forward secrecy</a> with session key integrity. Here's how:</p>
+
+<ol>
+    <li>Establish a <b>pre-shared integrity key</b> between you and your partner. This needs to be done in-person or over some other medium you trust. This key is only used for session key exchange integrity, not the actual encryption of message data. The rest of your communication can be over an untrusted medium.</li>
+    <li>Open the <a href="/dhe">Diffie-Hellman Key Exchange</a> (DHE) tool and obtain your <b>public key</b>. Copy it to the Input field of the <a href="/hmac">HMAC Calculator</a> and use your <b>pre-shared integrity key</b> as the HMAC key. Send both your <b>public key</b> and the <b>SHA-256</b> (or other agreed upon algorithm's) output to your partner.</li>
+    <li>Obtain the likewise generated information from your partner, paste their <b>public key</b> into the HMAC Input field, and verify that their <b>SHA-256</b> value matches the output that you calculated. If it does, paste their <b>public key</b> into the Partner Public Key field in the DHE tool. You will then have calculated a <b>shared secret</b>. Your partner should have followed these same steps and calculated the exact same shared secret.
+    <li>Copy the <b>shared secret</b> into the Key field of the <a href="/aes">AES String Encryption & Decryption</a> tool. You are then free to encrypt and decrypt messages to and from your partner and send them over untrusted media.</li>
+</ol>
+
+<h3>OTP Secret Restoration for Authenticator App</h3>
+
+<p>When you enable multi-factor authentication (MFA) on various web apps, it is generally a good idea to back up the <b>secret key</b> issued by the server. If you've done that and lost website's entry in your authenticator app (e.g., Google Authenticator), you can easily restore it by visiting the <a href="/otp">One-Time Password Calculator</a> tool and paste your saved <b>secret key</b> into the Secret field and entering a name in the QR Code Account field. Scan the code into your authenticator app and you're back in business! The timed calculated result should match what shows up on your phone.</p>
+
+
 
 {% endblock %}
