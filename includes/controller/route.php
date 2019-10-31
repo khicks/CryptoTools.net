@@ -16,6 +16,9 @@ class CryptoToolsRoute {
                 'home' => [
                     'active' => true
                 ]
+            ],
+            'content' => [
+                'is_onion' => (preg_match('/\\.onion$/', $_SERVER['HTTP_HOST']) === 1)
             ]
         ];
         $cryptotools->displayTemplate("home.html", $params);
@@ -34,7 +37,7 @@ class CryptoToolsRoute {
                 'js' => [
                     'root' => [
                         //"CryptoJS/aes.js",
-            "CryptoJS/crypto-js.js",
+                        "CryptoJS/crypto-js.js",
                         "aes-string.js"
                     ]
                 ]
@@ -66,7 +69,9 @@ class CryptoToolsRoute {
                 'js' => [
                     'root' => [
                         "JSEncrypt/jsencrypt.min.js",
-                        "rsa-gen.js"
+                        "rsa-gen.js",
+                        "rsa-gen-worker.js",
+                        "JSEncrypt/jsencrypt-worker.min.js"
                     ]
                 ]
             ],
