@@ -22,8 +22,8 @@ class CryptoTools {
         $this->loadDirectories();
         $this->loadFiles();
         $this->loadConfig();
-	$this->startSession();
-	$this->setHeaders();
+        $this->startSession();
+        $this->setHeaders();
     }
 
     private function loadDirectories() {
