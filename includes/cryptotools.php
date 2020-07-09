@@ -22,7 +22,8 @@ class CryptoTools {
         $this->loadDirectories();
         $this->loadFiles();
         $this->loadConfig();
-        $this->startSession();
+	$this->startSession();
+	$this->setHeaders();
     }
 
     private function loadDirectories() {
@@ -60,5 +61,11 @@ class CryptoTools {
 
         $user_id = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : null;
         $this->current_user = new CryptoToolsCurrentUser($this, $user_id);
+    }
+
+    private function setHeaders() {
+        if ($this->config['onion_location']) {
+            header("Onion-Location: {$this->config['onion_location']}{$_SERVER['REQUEST_URI']}");
+        }
     }
 }
