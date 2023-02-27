@@ -26,6 +26,6 @@ $match = $router->match();
 if( $match && is_callable( $match['target'] ) ) {
     call_user_func_array( $match['target'], $match['params'] );
 } else {
-    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
-    echo "Error 404: Not found";
+    header( 'Content-Type: text/plain', true, 404 );
+    echo "404 Not Found\r\n";
 }
