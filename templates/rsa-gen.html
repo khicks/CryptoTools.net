@@ -85,13 +85,13 @@
         <h4>Encrypt Data</h4>
         <p>We can now use this key pair to encrypt and decrypt a file, <b>data.txt</b>.</p>
         <div class="p-3 mb-3 rounded code-block">
-            <pre class="m-0">$ openssl rsautl -encrypt -inkey public.pem -pubin -in data.txt -out data.txt.enc</pre>
+            <pre class="m-0">$ openssl pkeyutl -encrypt -inkey public.pem -pubin -in data.txt -out data.txt.enc</pre>
         </div>
 
         <h4>Decrypt Data</h4>
         <p>Given the encrypted file from the previous step, you may decrypt it like so.</p>
         <div class="p-3 mb-3 rounded code-block">
-            <pre class="m-0">$ openssl rsautl -decrypt -inkey private.pem -in data.txt.enc -out data.txt</pre>
+            <pre class="m-0">$ openssl pkeyutl -decrypt -inkey private.pem -in data.txt.enc -out data.txt</pre>
         </div>
     </div>
 </div>
